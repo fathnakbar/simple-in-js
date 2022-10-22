@@ -1,4 +1,4 @@
-# css-in-js
+# simple-in-js
 Simple css in js for developing component based js app
 
 this simple script use object that has toString() method and proxy to server ability to extends classname dynamically
