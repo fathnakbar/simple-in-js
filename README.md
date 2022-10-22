@@ -97,21 +97,22 @@ You can use it in other style. for example:
 
   function App(){
     const state = useState('end');
+    const [style, setStyle] = useState('');
 
     switch(state){
       case 'start':
-        flexContainer.with(start)
+        setStyle(flexContainer.with(start))
       break;
       case 'center':
-        flexContainer.with(center)
+        setStyle(flexContainer.with(center))
       break;
       case 'end':
-        flexContainer.with(end)
+        setStyle(flexContainer.with(end))
       break;
     }
 
     return (
-      <div className={state}></div>
+      <div className={style}></div>
     )
   }
 
@@ -121,8 +122,7 @@ NOTE: the `@with` value won't included for now
 ## Roadmap
 
 - [ ] Caching
-
-- [ ] Builder ‒build composite style that use tailwind or bootstrap.
-
-- [ ] Composite @with
+- [ ] Builder ‒Generate css file.
+- [ ] @tailwind, @bootstrap rules support
+- [ ] Include all value for composite style
 
