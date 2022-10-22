@@ -5,8 +5,7 @@ this simple script use object that has toString() method and proxy to server abi
 
 ## Usage/Examples
 
-To used it import `css` function inside index.js script. The output of `css` template function is an proxy that reflect `toString()` method
-that returns a generated class name. You can also write nested style.
+To used it import `useCSS` or `css` function inside index.js script. The output of `useCSS` template function is an proxy that reflect `toString()` method that returns a generated class name. The `css` method return a class name as string. This separation intended to avoid type conflict in typescript. You can also write nested style.
 
 ```javascript
   const style = css`
@@ -35,13 +34,14 @@ Put it on className attribute:
 
 ```
 
-NOTE: Alway remember to call `css` function outside the component so it won't redundantly insert multiple style.
+NOTE: Alway remember to call `css` or `useCSS` function outside the component so it won't redundantly insert multiple style.
 For further improvement, I will add cache to avoid this
 
 ### with
 In case you want to use tailwind, bootstrap, or just add class dynamically you can use property accessor for ex:
 
 ```javascript
+  const style = useCSS``;
   style.otherClass // or style['otherClass']
 
   // output: `${generatedClassname} otherClass`
@@ -50,6 +50,7 @@ In case you want to use tailwind, bootstrap, or just add class dynamically you c
 or use the generated style `with` method:
 
 ```javascript
+  const style = useCSS``;
   style.with('container', 'box-border hidden');
 
   // output: `${generatedClassname} container box-border hidden`
@@ -62,6 +63,7 @@ or simply use @with rules:
   display: flex
   @with flex flex-row items-start
 `
+  // you can use css or useCSS function for @with rules
 
   // output: `${generatedClassname} flex flex-row items-start`
 ```
@@ -69,16 +71,16 @@ at rules only cannot be use inside nested style.
 
 ### composite style
 
-Because the output of `css` is an object that returns the classname.
-You can use it in other style. for example:
+Because the output of `useCSS` is an object that returns a proxy object: `{with: () => string, name: string}`. You can compose a style. There's not much of difference
+in `css` and `useCSS`. It is written so typescript works as we expected. for example:
 ```javascript
-  const flexContainer = css`
+  const flexContainer = useCSS`
     display: flex;
   `
 
   const alignCenter = css`
     align-items: center;
-    @with ${flexContainer} justify-center
+    @with ${flexContainer.name} justify-center
   `
 
   // or to dynamically compose style
