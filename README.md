@@ -71,8 +71,7 @@ at rules only cannot be use inside nested style.
 
 ### composite style
 
-Because the output of `useCSS` is an object that returns a proxy object: `{with: () => string, name: string}`. You can compose a style. There's not much of difference
-in `css` and `useCSS`. It is written so typescript works as we expected. for example:
+Because the output of `useCSS` is an object that returns a proxy object: `{with: () => string, name: string}`. You can compose a style. For example:
 ```javascript
   const flexContainer = useCSS`
     display: flex;
