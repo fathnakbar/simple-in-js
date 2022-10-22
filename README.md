@@ -35,7 +35,7 @@ Put it on className attribute:
 
 ```
 
-NOTE: Alway remember to call `css` function outside the component so it won't redudantly inject multiple style.
+NOTE: Alway remember to call `css` function outside the component so it won't redundantly insert multiple style.
 For further improvement, I will add cache to avoid this
 
 ### with
