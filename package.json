@@ -1,6 +1,6 @@
 {
   "name": "simple-in-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple css in js to build your components",
   "main": "index.js",
   "scripts": {
