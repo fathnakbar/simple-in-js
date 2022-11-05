@@ -72,6 +72,9 @@ export function rulesManager(rules){
         props: {
             name(){
                 return `.${randomName}`;
+            },
+            toString(){
+                return attr;
             }
         }
     };
@@ -137,7 +140,7 @@ function parseRuleSet(rules, name){
     return [declaration, tags]
 }
 
-export function css(rules, ...res) {
+export function useCSS(rules, ...res) {
     const [declarations, proxy] = rulesManager(toString(...arguments));
 
     declarations.map(val => {
@@ -145,4 +148,8 @@ export function css(rules, ...res) {
         style.insertRule(val)
     })
     return proxy
+}
+
+export function css() {
+    return useCSS(...arguments).toString();
 }

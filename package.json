@@ -1,0 +1,22 @@
+{
+  "name": "simple-in-js",
+  "version": "1.0.0",
+  "description": "Simple css in js to build your components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fathnakbar/css-in-js.git"
+  },
+  "keywords": [
+    "css-in-js"
+  ],
+  "author": "Fathan Akbar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fathnakbar/css-in-js/issues"
+  },
+  "homepage": "https://github.com/fathnakbar/css-in-js#readme"
+}
