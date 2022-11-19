@@ -119,12 +119,13 @@ Because the output of `useCSS` is an object that returns a proxy object: `{with:
 
 ```
 
-NOTE: the `@with` value won't included for now
+NOTE: accessing `name` property for returning the generated classname excluding the @with values.
 ## Roadmap
 
-- [ ] Caching
+- [ ] Caching.
 - [ ] Builder ‒Generate css file.
-- [ ] @tailwind, @bootstrap rules support
-- [ ] Include all value for composite style
-- [ ] Inine style generation with `style` props
+- [ ] @tailwind, @bootstrap rules support.
+- [ ] Include all value for composite style.
+- [ ] Inine style generation with `style` props.
+- [ ] Namespace for variables, styles, and themes.
 
