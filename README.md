@@ -126,4 +126,5 @@ NOTE: the `@with` value won't included for now
 - [ ] Builder ‒Generate css file.
 - [ ] @tailwind, @bootstrap rules support
 - [ ] Include all value for composite style
+- [ ] Inine style generation with `style` props
 
