@@ -119,7 +119,8 @@ Because the output of `useCSS` is an object that returns a proxy object: `{with:
         setStyle(flexContainer.with(center))
       break;
       case 'end':
-        setStyle(flexContainer.with(end))
+        // same as:
+        setStyle(flexContainer[end])
       break;
     }
 
