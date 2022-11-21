@@ -31,7 +31,9 @@ Put it on className attribute:
       <div>
         <div className={container}>
           <a>
-            {//This link's color is red}
+            {
+              //This link's color is red
+            }
           </a>
         </div>
         <div className={container.center}>
