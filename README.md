@@ -36,7 +36,7 @@ Put it on className attribute:
             }
           </a>
         </div>
-        <div className={container.center}>
+        <div className={`${container} center`}>
         
         </div>
       </div>
