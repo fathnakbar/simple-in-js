@@ -5,29 +5,38 @@ this simple script use object that has toString() method and proxy to serve abil
 
 ## Usage/Examples
 
-To used it import `useCSS` or `css` function inside index.js script. The output of `useCSS` template function is an proxy that reflect `toString()` method that returns a generated class name. The `css` method return a class name as string. This separation intended to avoid type conflict in typescript. You can also write nested style.
+To use it import `useCSS` or `css` function inside index.js script. The output of `useCSS` template function is an proxy that reflect `toString()` method that returns a generated class name. The `css` method returns a class name as string. This separation intended to avoid type conflict in typescript.
 
 ```javascript
-  const style = css`
+  const container = css`
   display: flex;
 
   a {
     color: red;
   }
+  
+  &.'center' {
+    justify-content: center;
+    align-items: center;
+  }
 
 `
 ```
-
 
 Put it on className attribute:
 
 ```javascript
   function App(){
     return (
-      <div className={style}>
-        <a>
-          {//This link's color is red}
-        </a>
+      <div>
+        <div className={container}>
+          <a>
+            {//This link's color is red}
+          </a>
+        </div>
+        <div className={`${container} center`}>
+        
+        </div>
       </div>
     )
   }
